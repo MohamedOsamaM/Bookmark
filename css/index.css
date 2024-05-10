@@ -1,0 +1,124 @@
+@font-face {
+    font-family: Pacifico;
+    src: url('../fonts/Pacifico-Regular.ttf');
+}
+@font-face {
+    font-family: Righteous;
+    src: url('../fonts/Righteous-Regular.ttf');
+}
+@font-face {
+    font-family: 'PT Sans Caption';
+    src: url('../fonts/PTSansCaption-Bold.ttf');
+}
+@font-face {
+    font-family: 'PT Sans Caption reg';
+    src: url('../fonts/PTSansCaption-Regular.ttf');
+}
+@font-face {
+    font-family: 'Bree Serif';
+    src: url('../fonts/BreeSerif-Regular.ttf');
+}
+*::selection
+{
+    color: white !important;
+    background-color: #fec260 !important;
+}
+body
+{
+    background-color: #F7ECDE;
+}
+h1
+{
+    font-family: Pacifico , cursive;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 50px;
+    line-height: 60px;
+    color: rgb(53, 46, 40);
+}
+h1::before
+{
+    content: '';
+    background-color: #fec260;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 21%;
+    height: 25px;
+    margin-inline: auto;
+    transition: all 0.5s;
+    z-index: -1;
+}
+h1:hover::before
+{
+    height: 50px;
+}
+div.site-title
+{
+    border-bottom: 2px dotted ;
+}
+h2
+{
+    font-family: Righteous, cursive;
+    font-style: normal;
+    font-weight: 500;
+    color: rgb(33, 37, 41);
+    font-size: 25px;
+    line-height: 30px;
+    background-image: linear-gradient(to right,#3FA55B, #B3AC49);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+label 
+{
+    font-family: 'PT Sans Caption',sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    color: rgb(33, 37, 41);
+    font-size: 16px;
+    line-height: 24px;
+}
+span 
+{
+    font-family: 'PT Sans Caption',sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    color: rgb(33, 37, 41);
+    font-size: 16px;
+    line-height: 24px;
+}
+input:focus
+{
+    border-color:#fec260 ;
+    box-shadow:  0px 0px 5px 2px #fec260 ;
+}
+button , a
+{
+    font-family: 'PT Sans Caption reg', sans-serif !important;
+    font-style: normal !important;
+    font-size: 16px !important;
+    line-height: 24px !important;
+}
+p
+{
+    font-family: 'PT Sans Caption', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    color: rgb(33, 37, 41);
+    font-size:18px;
+}
+h3
+{
+    font-family: 'Bree Serif',serif;
+    font-style: normal;
+    font-weight: 400;
+    color: rgb(53, 46, 40);
+    font-size: 21px;
+    line-height: 27px;
+}
+.btn-visit
+{
+    background-color: #8A9E23;
+    border-color: #8A9E23;
+}

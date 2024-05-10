@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookmark</title>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="icon" type="image/x-icon" href="bookmark.ico" />
+  </head>
+  <body>
+    <div class="container py-5 my-5">
+      <div class="site-title pb-5">
+        <h1 class="text-center position-relative mb-3">Bookmarker</h1>
+      </div>
+      <div class="site-title pb-5">
+        <h2 class="text-center my-5">
+          <i class="fa-solid fa-bookmark"></i>
+          Bookmark your favorite sites
+          <i class="fa-solid fa-bookmark"></i>
+        </h2>
+        <label for="BookmarkName" class="mb-3"
+          ><i class="fa-solid fa-book-bookmark me-2"></i>Site Name</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="BookmarkName"
+          placeholder="Bookmark Name"
+          name="BookmarkName"
+          oninput="bookUrlValidator(this);"
+        />
+        <div class="alert alert-secondary mb-5 mt-1" role="alert">
+          Site name must contain at least 3 characters
+        </div>
+        <label for="WebsiteUrl" class="mb-3"
+          ><i class="fa-solid fa-book-bookmark me-2"></i>Site Url</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="WebsiteUrl"
+          placeholder="Website Url"
+          name="WebsiteUrl"
+          oninput="bookUrlValidator(this); "
+        />
+        <div class="alert alert-secondary mt-1" role="alert">
+          Site URL must be a valid one like these begin with https:// or http://
+          and www.[urlname].com
+        </div>
+        <button
+          class="btn btn-danger my-5 mx-auto d-block px-5 py-2"
+          id="btn-submit"
+          onclick="adding();"
+        >
+          Submit
+        </button>
+        <button
+          class="btn btn-success my-5 mx-auto d-none px-5 py-2"
+          id="btn-update"
+          onclick="updateP2();"
+        >
+          Update
+        </button>
+        <input
+          type="search"
+          class="form-control"
+          id="searchBar"
+          placeholder="Bookmark Searching"
+          name="searchBar"
+          oninput="search(this.value);"
+        />
+        <div class="alert alert-danger d-none" role="alert" id="errorMessage">
+          nothing found!
+        </div>
+      </div>
+      <div class="mt-5">
+        <div class="row bg-white p-2 mb-3">
+          <div class="col-2">
+            <div class="d-flex justify-content-center align-items-center">
+              <span>Index</span>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="d-flex justify-content-center align-items-center">
+              <span>Website Name</span>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="d-flex justify-content-center align-items-center">
+              <span>Visit</span>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="d-flex justify-content-center align-items-center">
+              <span>Update</span>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="d-flex justify-content-center align-items-center">
+              <span>Delete</span>
+            </div>
+          </div>
+        </div>
+        <div id="url-box"></div>
+      </div>
+      <div
+        class="position-fixed start-0 end-0 bottom-0 top-0 bg-dark bg-opacity-50 d-none"
+        id="alerting"
+      >
+        <div
+          class="position-absolute top-50 start-50 translate-middle bg-white p-5 shadow"
+        >
+          <div class="d-flex justify-content-between mb-3">
+            <div class="mt-3">
+              <i class="fa-solid fa-circle fa-sm text-danger"></i>
+              <i class="fa-solid fa-circle fa-sm text-warning"></i>
+              <i class="fa-solid fa-circle fa-sm text-success"></i>
+            </div>
+            <button class="btn fs-1 border-0 p-0" id="alerting-close">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+          <div class="p-4">
+            <h3 class="fs-5 mb-5">
+              Site Name or Url is not valid, Please follow the<br />rules below
+              :
+            </h3>
+            <p class="lead text-secondary fs-6">
+              <i
+                class="fa-regular fa-circle-down fa-rotate-270 me-2 text-danger"
+              ></i
+              >Site name must contain at least 3 characters
+            </p>
+            <p class="lead text-secondary fs-6">
+              <i
+                class="fa-regular fa-circle-down fa-rotate-270 me-2 text-danger"
+              ></i
+              >Site URL must be a valid one
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/index.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
